@@ -30,4 +30,17 @@ const allAdults = people.every(function(person) {
 });
 console.log(allAdults); //works! returns 'false'
 
-//3. 
+//3. Find the comment with an ID of '823423'
+const specificComment = comments.find(function(comment) {
+    if (comment.id === 823423) {
+      return true;
+    }
+  }).text;
+console.log(specificComment); //works! returns 'Super good'
+
+//4. Delete the comment with this ID
+const index = comments.findIndex(function(comment) {
+  return comment.id === 823423; //returns index in array
+});
+const deletedComment = comments.splice(index, 1);
+console.table(comments); //the .splice() method alters the original array
